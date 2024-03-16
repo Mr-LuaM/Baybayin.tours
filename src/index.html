@@ -1,0 +1,961 @@
+<!DOCTYPE html>
+<html class="scroll-smooth">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link href="/dist/output.css" rel="stylesheet" />
+    <link rel="stylesheet" media="screen" href="https://fontlibrary.org//face/baybayin-daluyong" type="text/css"/>
+    <link rel="icon" href="assets/logo/1.jpg" type="image/jpeg" />
+
+    <title>BayBayin Tours</title>
+    <script>
+      document.documentElement.classList.add("js");
+    </script>
+    <script>
+      document.addEventListener("DOMContentLoaded", () => {
+        const carouselItems = document.querySelectorAll("[data-carousel-item]");
+        let currentItemIndex = 0; // Index of the currently active item
+
+        // Function to change to a specific carousel item
+        const changeItem = (index) => {
+          carouselItems.forEach((item, i) => {
+            item.classList.toggle("hidden", i !== index); // Hide all but the active item
+          });
+          currentItemIndex = index;
+        };
+
+        // Function to go to the next item
+        const nextItem = () => {
+          let newIndex = currentItemIndex + 1;
+          if (newIndex >= carouselItems.length) newIndex = 0; // Loop back to the start
+          changeItem(newIndex);
+        };
+
+        // Function to go to the previous item
+        const prevItem = () => {
+          let newIndex = currentItemIndex - 1;
+          if (newIndex < 0) newIndex = carouselItems.length - 1; // Loop back to the end
+          changeItem(newIndex);
+        };
+
+        // Setup interval for auto-sliding
+        const slideInterval = setInterval(nextItem, 5000); // Change slide every 5 seconds
+
+        // Select the previous and next buttons
+        const prevButton = document.querySelector("[data-carousel-prev]");
+        const nextButton = document.querySelector("[data-carousel-next]");
+
+        // Add click events for the previous and next buttons
+        prevButton.addEventListener("click", () => {
+          prevItem();
+          // Reset the interval when user interacts with the carousel
+          clearInterval(slideInterval);
+        });
+
+        nextButton.addEventListener("click", () => {
+          nextItem();
+          // Reset the interval when user interacts with the carousel
+          clearInterval(slideInterval);
+        });
+
+        // Initially display the first carousel item
+        changeItem(0);
+      });
+    </script>
+  </head>
+  <body>
+    <nav class="bg-amber-50 border-gray-200 dark:bg-gray-900">
+      <div
+        class="flex flex-wrap justify-between items-center mx-auto max-w-screen-xl p-4"
+      >
+        <a
+          href="index.html"
+          class="flex items-center space-x-3 rtl:space-x-reverse"
+        >
+          <img src="assets/logo/1.jpg" class="h-8" alt="Flowbite Logo" />
+          <span
+            class="self-center text-2xl font-bold whitespace-nowrap dark:text-white"
+      
+          >
+          Baybayin Tours</span
+          >
+        </a>
+        <div class="flex items-center space-x-6 rtl:space-x-reverse">
+          <a
+            href="tel:+639171551914"
+            class="text-sm text-gray-500 dark:text-white hover:underline"
+            >0917-155-1914</a
+          >
+          <a
+            href="#contacts"
+            class="text-sm text-teal-900 dark:text-teal-500 hover:underline"
+            >Contact</a
+          >
+        </div>
+      </div>
+    </nav>
+    <nav class="dark:bg-gray-700">
+      <div class="max-w-screen-xl px-4 py-3 mx-auto">
+        <div class="flex items-center">
+          <ul
+            class="flex flex-row font-medium mt-0 space-x-8 rtl:space-x-reverse text-sm"
+          >
+            <li>
+              <a
+                href="index.html"
+                class="py-2 px-3 rounded bg-transparent text-teal-700 md:text-teal-700"
+                aria-current="page"
+                >Home</a
+              >
+            </li>
+            <li>
+              <a
+                href="history.html"
+                class="text-gray-900 dark:text-white hover:underline"
+                >History</a
+              >
+            </li>
+            <li>
+              <a
+                href="tours.html"
+                class="text-gray-900 dark:text-white hover:underline"
+                >Tours</a
+              >
+            </li>
+            <li>
+              <a
+                href="contacts.html"
+                class="text-gray-900 dark:text-white hover:underline"
+                >Contact</a
+              >
+            </li>
+          </ul>
+        </div>
+      </div>
+    </nav>
+    <section
+      class="relative bg-center bg-no-repeat bg-gray-700 bg-blend-multiply"
+    >
+      <!-- Video element for background -->
+      <video
+        autoplay
+        muted
+        loop
+        class="absolute inset-0 w-full h-full object-cover"
+      >
+        <source
+          src="assets/bg/258953205_430856431871899_5906392296408622935_n.mp4"
+          type="video/mp4"
+        />
+        Your browser does not support the video tag.
+      </video>
+
+      <div
+        class="px-4 mx-auto max-w-screen-xl text-center py-24 lg:py-56 relative z-10 md:delay-[500ms] md:duration-[1000ms]md: taos:opacity-0"
+      >
+        <!-- Your existing md:content goes here -->
+
+        <h1
+          class="mb-4 text-4xl font-extrabold tracking-tight leading-none text-white md:text-5xl lg:text-6xl"
+        >
+          BAYBAYIN TOURS
+        </h1>
+        <p
+          class="mb-8 text-lg font-normal text-gray-300 lg:text-xl sm:px-16 lg:px-48"
+        >
+          Here at Baybayin Tours, we are passionate about our tours, focusing on
+          destinations where exploration, adventure, and cultural experiences
+          can unlock unforgettable moments and create lasting memories.
+        </p>
+        <div
+          class="flex flex-col space-y-4 sm:flex-row sm:justify-center sm:space-y-0"
+        >
+          <a
+            href="#contacts"
+            class="inline-flex justify-center items-center py-3 px-5 text-base font-medium text-center text-white rounded-lg bg-teal-700 hover:bg-teal-800 focus:ring-4 focus:ring-teal-300 dark:focus:ring-teal-900"
+          >
+            Get started
+            <svg
+              class="w-3.5 h-3.5 ms-2 rtl:rotate-180"
+              aria-hidden="true"
+              xmlns="http://www.w3.org/2000/svg"
+              fill="none"
+              viewBox="0 0 14 10"
+            >
+              <path
+                stroke="currentColor"
+                stroke-linecap="round"
+                stroke-linejoin="round"
+                stroke-width="2"
+                d="M1 5h12m0 0L9 1m4 4L9 9"
+              />
+            </svg>
+          </a>
+          <a
+            href="#tours"
+            class="inline-flex justify-center hover:text-gray-900 items-center py-3 px-5 sm:ms-4 text-base font-medium text-center text-white rounded-lg border border-white hover:bg-gray-100 focus:ring-4 focus:ring-gray-400"
+          >
+            Learn more
+          </a>
+        </div>
+      </div>
+    </section>
+    <section id="#" class="bg-gray-50 dark:bg-gray-900">
+      <div
+        class="gap-16 items-center py-8 px-4 mx-auto max-w-screen-xl lg:grid lg:grid-cols-2 lg:py-16 lg:px-6"
+      >
+        <div class="font-light text-gray-500 sm:text-lg dark:text-gray-400">
+          <h2
+            class="mb-4 text-4xl tracking-tight font-extrabold text-gray-900 dark:text-white"
+          >
+            ADVENTOUR TODAY!!!
+          </h2>
+          <p class="mb-4">
+            Coron is one of Palawan’s most popular beach and island
+            destinations. This paradise-like getaway comprises of the eastern
+            half of Busuanga Island, Coron Island, and 50 other islets within
+            the vicinity, all of which are separate from the main Palawan
+            island. It has caught the attention of many due to its World War II
+            wreck diving spots, beautiful rock formations, and unbelievably
+            clear waters. It is also considered the more quiet and laidback
+            sibling of El Nido, another famous Palawan destination because of
+            its gorgeous waters and scenery. Coron certainly has a unique charm
+            to it and worth adding to your travel bucket list when in the
+            Philippines.
+          </p>
+          <p>Discover your next travel with us</p>
+          <br />
+          <li class="flex items-center">
+            <a
+              href="mailto:traveltoursbaybayin@gmail.com"
+              class="hover:underline tracking-tight font-bold text-teal-800"
+            >
+              traveltoursbaybayin@gmail.com
+            </a>
+          </li>
+        </div>
+        <div class="grid grid-cols-2 gap-4 mt-8">
+          <img
+            class="w-full rounded-lg shadow-2xl md:delay-[300ms] md:duration-[900ms] md:taos:[transform:translate3d(200px,0,0)_scale(0.6)] tmd:aos:opacity-0"
+            data-taos-offset="100"
+            src="assets/pics/1.jpg"
+            alt="office content 1"
+          />
+          <img
+            class="mt-4 w-full lg:mt-10 rounded-lg shadow-2xl md:delay-[300ms] md:duration-[900ms] md:taos:[transform:translate3d(200px,0,0)_scale(0.6)] tmd:aos:opacity-0"
+            data-taos-offset="100"
+            src="assets/pics/5.jpg"
+            alt="office content 2"
+          />
+        </div>
+      </div>
+      <div class="mx-auto"></div>
+    </section>
+    <section id="history" class="bg-gray-800 p-4">
+      <div
+        class="gap-8 items-center py-8 px-4 mx-auto max-w-screen-xl xl:gap-16 md:grid md:grid-cols-2 sm:py-16 lg:px-6"
+      >
+        <img
+          class="w-full dark:hidden rounded-lg md:delay-[300ms] md:duration-[900ms] md:taos:[transform:translate3d(-200px,0,0)_scale(0.6)] md:taos:opacity-0"
+          data-taos-offset="100"
+          src="assets/history/1.jpg"
+          alt="dashboard image"
+        />
+        <img
+          class="w-full hidden rounded-lg dark:block shadow-lg"
+          src="assets/history/1.jpg"
+          alt="dashboard image"
+        />
+        <div class="mt-4 md:mt-0">
+          <h2
+            class="mb-4 text-4xl tracking-tight font-extrabold text-white dark:text-white"
+          >
+            HISTORY OF CORON TAGBANUA TRIBE
+          </h2>
+          <p
+            class="mb-6 font-light text-gray-500 md:text-lg dark:text-gray-400"
+          >
+            According to folk history, the Tagbanwa had a relationship with
+            Brunei a long time ago with the first masikampu (sultan) of Brunyu,
+            from a place called Burnay. Their formal history, however, begins
+            with the Spanish colonization of the Philippines. In 1521,
+            Magellan’s ships docked in Palawan for provisions, and Antonio
+            Pigafetta recorded that the Tagbanwa practiced the ritual of blood
+            compact, cultivated their fields, hunted with blowpipes and thick
+            wooden arrows, valued brass rings and chains, bells, knives, and
+            copper wire for binding fish hooks, raised large and very tame cocks
+            which they pitted against one another and laid bets on, and
+            distilled rice wine.
+          </p>
+          <a
+            href="history.html"
+            class="inline-flex items-center text-white bg-primary-700 hover:bg-primary-800 focus:ring-4 focus:ring-primary-300 font-medium rounded-lg text-sm px-5 py-2.5 text-center dark:focus:ring-primary-900"
+          >
+            Read the whole History
+            <svg
+              class="ml-2 -mr-1 w-5 h-5"
+              fill="currentColor"
+              viewBox="0 0 20 20"
+              xmlns="http://www.w3.org/2000/svg"
+            >
+              <path
+                fill-rule="evenodd"
+                d="M10.293 3.293a1 1 0 011.414 0l6 6a1 1 0 010 1.414l-6 6a1 1 0 01-1.414-1.414L14.586 11H3a1 1 0 110-2h11.586l-4.293-4.293a1 1 0 010-1.414z"
+                clip-rule="evenodd"
+              ></path>
+            </svg>
+          </a>
+        </div>
+      </div>
+    </section>
+    <section id="tours" class="bg-gray-50 dark:bg-gray-900">
+      <div class="py-8 px-4 mx-auto max-w-screen-xl lg:py-16 lg:px-6">
+        <div class="mx-auto max-w-screen-m text-center mb-8 lg:mb-16">
+          <h2
+            class="mb-4 text-4xl tracking-tight font-extrabold text-gray-900 dark:text-white"
+          >
+            Discover Unforgettable Adventures with Our Services
+          </h2>
+          <p
+            class="font-light text-gray-500 lg:mb-16 sm:text-xl dark:text-gray-400"
+          >
+            Embark on an extraordinary journey through the breathtaking
+            landscapes of Palawan with our hassle-free and affordable tour
+            packages. Immerse yourself in the richness of our local cuisines and
+            experience the vibrant tapestry of unique cultures that await you.
+            Our services unite people from all corners of the world, providing
+            not just a vacation but a gateway to memorable travel experiences.
+            Join us and make every moment count in the paradise that is Palawan!
+          </p>
+        </div>
+        <div class="grid gap-8 mb-4 lg:mb-16 md:grid-cols-4">
+          <div
+            class="bg-gray-50 rounded-lg shadow-2xl overflow-hidden dark:bg-gray-800 dark:border-gray-700 flex-shrink-0 md:delay-[300ms] md:duration-[600ms] md:taos:scale-[1.2] taos:opacity-0"
+            data-taos-offset="4md:00"
+          >
+            <a href="#">
+              <img
+                class="w-full h-48 object-cover"
+                src="assets/tours/1.jpg"
+                alt="Coron Town Tour Image"
+              />
+            </a>
+            <div class="p-5">
+              <h3
+                class="text-xl font-bold tracking-tight text-gray-900 dark:text-white"
+              >
+                <a href="#" class="hover:underline">CORON TOWN TOUR</a>
+              </h3>
+              <span class="text-green-400 font-semibold dark:text-gray-400"
+                >Php 999.00 /pax</span
+              >
+              <ul
+                class="mt-3 mb-4 list-disc list-inside text-gray-500 dark:text-gray-400"
+              >
+                <li>Coron Souvenir Shop</li>
+                <li>Lualhati Park</li>
+                <li>Town Plaza</li>
+                <li>St. Agustin Church</li>
+                <li>Mt. Tapyas View Deck</li>
+                <li>Coron Cashew Factory</li>
+                <li>Macquinit Hot Spring</li>
+              </ul>
+            </div>
+          </div>
+
+          <div
+            class="bg-gray-50 rounded-lg shadow-2xl overflow-hidden dark:bg-gray-800 dark:border-gray-700 flex-shrink-0 md:delay-[300ms] md:duration-[600ms] md:taos:scale-[1.2] taos:opacity-0"
+            data-taos-offset="4md:00"
+          >
+            <a href="#">
+              <img
+                class="w-full h-48 object-cover"
+                src="assets/tours/2.jpg"
+                alt="Coron Town Tour Image"
+              />
+            </a>
+            <div class="p-5">
+              <h3
+                class="text-xl font-bold tracking-tight text-gray-900 dark:text-white"
+              >
+                <a href="#" class="hover:underline"
+                  >ULTIMATE HIGHLIGHTS TOUR
+                </a>
+              </h3>
+              <span class="text-green-400 font-semibold dark:text-gray-400"
+                >Php 1,599.00 /pax</span
+              >
+              <ul
+                class="mt-3 mb-4 list-disc list-inside text-gray-500 dark:text-gray-400"
+              >
+                <li>Kayangan Lake</li>
+                <li>Twin Lagoon</li>
+                <li>White Beach or Millenial Beach</li>
+                <li>Skeleton Wreck or Balinsasayaw</li>
+                <li>CYC White Sand Beach</li>
+                <li>Las Isla De Coral</li>
+                <li>Macquinit Hot Spring</li>
+              </ul>
+            </div>
+          </div>
+          <div
+            class="bg-gray-50 rounded-lg shadow-2xl overflow-hidden dark:bg-gray-800 dark:border-gray-700 flex-shrink-0 md:delay-[300ms] md:duration-[600ms] md:taos:scale-[1.2] taos:opacity-0"
+            data-taos-offset="4md:00"
+          >
+            <a href="#">
+              <img
+                class="w-full h-48 object-cover"
+                src="assets/tours/3.jpg"
+                alt="Coron Town Tour Image"
+              />
+            </a>
+            <div class="p-5">
+              <h3
+                class="text-xl font-bold tracking-tight text-gray-900 dark:text-white"
+              >
+                <a href="#" class="hover:underline">BEACH ESCAPE TOUR</a>
+              </h3>
+              <span class="text-green-400 font-semibold dark:text-gray-400"
+                >Php 999.00 /pax</span
+              >
+              <ul
+                class="mt-3 mb-4 list-disc list-inside text-gray-500 dark:text-gray-400"
+              >
+                <li>Malcapuya Island</li>
+                <li>Banana Isalnd or</li>
+                <li>Ditaytayan White Sand Bar Beach</li>
+              </ul>
+            </div>
+          </div>
+
+          <div
+            class="bg-gray-50 rounded-lg shadow-2xl overflow-hidden dark:bg-gray-800 dark:border-gray-700 flex-shrink-0 md:delay-[300ms] md:duration-[600ms] md:taos:scale-[1.2] taos:opacity-0"
+            data-taos-offset="4md:00"
+          >
+            <a href="#">
+              <img
+                class="w-full h-48 object-cover"
+                src="assets/tours/4.jpg"
+                alt="Coron Town Tour Image"
+              />
+            </a>
+            <div class="p-5">
+              <h3
+                class="text-xl font-bold tracking-tight text-gray-900 dark:text-white"
+              >
+                <a href="#" class="hover:underline"
+                  >REEF [&] WRECK + BEACH TOUR
+                </a>
+              </h3>
+              <span class="text-green-400 font-semibold dark:text-gray-400"
+                >Php 1,599.00 /pax</span
+              >
+              <ul
+                class="mt-3 mb-4 list-disc list-inside text-gray-500 dark:text-gray-400"
+              >
+                <li>Pass Island White Sand Beach</li>
+                <li>Lusong Coral Ship Wreck</li>
+                <li>Lusong Coral Garden</li>
+              </ul>
+            </div>
+          </div>
+          <div
+            class="bg-gray-50 rounded-lg shadow-2xl overflow-hidden dark:bg-gray-800 dark:border-gray-700 flex-shrink-0 md:delay-[300ms] md:duration-[600ms] md:taos:scale-[1.2] taos:opacity-0"
+            data-taos-offset="4md:00"
+          >
+            <a href="#">
+              <img
+                class="w-full h-48 object-cover"
+                src="assets/tours/5.jpg"
+                alt="Coron Town Tour Image"
+              />
+            </a>
+            <div class="p-5">
+              <h3
+                class="text-xl font-bold tracking-tight text-gray-900 dark:text-white"
+              >
+                <a href="#" class="hover:underline">CORON ISLAND TOUR A</a>
+              </h3>
+              <span class="text-green-400 font-semibold dark:text-gray-400"
+                >Php 1,299.00 /pax</span
+              >
+              <ul
+                class="mt-3 mb-4 list-disc list-inside text-gray-500 dark:text-gray-400"
+              >
+                <li>Kayangan Lake</li>
+                <li>CyC White Sand Beach</li>
+                <li>Dimanget or Millenial Cottage</li>
+                <li>Las Isla De Coral</li>
+                <li>Ditaolong Seaclam or Quin Reef</li>
+              </ul>
+            </div>
+          </div>
+          <div
+            class="bg-gray-50 rounded-lg shadow-2xl overflow-hidden dark:bg-gray-800 dark:border-gray-700 flex-shrink-0 md:delay-[300ms] md:duration-[600ms] md:taos:scale-[1.2] taos:opacity-0"
+            data-taos-offset="4md:00"
+          >
+            <a href="#">
+              <img
+                class="w-full h-48 object-cover"
+                src="assets/tours/6.jpg"
+                alt="Coron Town Tour Image"
+              />
+            </a>
+            <div class="p-5">
+              <h3
+                class="text-xl font-bold tracking-tight text-gray-900 dark:text-white"
+              >
+                <a href="#" class="hover:underline">CORON ISLAND TOUR B</a>
+              </h3>
+              <span class="text-green-400 font-semibold dark:text-gray-400"
+                >Php1,399.00 /pax</span
+              >
+              <ul
+                class="mt-3 mb-4 list-disc list-inside text-gray-500 dark:text-gray-400"
+              >
+                <li>Twin Lagoon</li>
+                <li>Barracuda Lake</li>
+                <li>White Beach or Millenial Cottage</li>
+                <li>Skeleton Wreck or Balinsasayaw</li>
+                <li>DCoral Garden or Reef Garden</li>
+              </ul>
+            </div>
+          </div>
+
+          <div
+            class="bg-gray-50 rounded-lg shadow-2xl overflow-hidden dark:bg-gray-800 dark:border-gray-700 flex-shrink-0 md:delay-[300ms] md:duration-[600ms] md:taos:scale-[1.2] taos:opacity-0"
+            data-taos-offset="4md:00"
+          >
+            <a href="#">
+              <img
+                class="w-full h-48 object-cover"
+                src="assets/tours/7.jpg"
+                alt="Coron Town Tour Image"
+              />
+            </a>
+            <div class="p-5">
+              <h3
+                class="text-xl font-bold tracking-tight text-gray-900 dark:text-white"
+              >
+                <a href="#" class="hover:underline"
+                  >CALAUIT SAFARI W/ ISLAND HOPPING</a
+                >
+              </h3>
+              <span class="text-green-400 font-semibold dark:text-gray-400"
+                >Php 1,299.00 /pax</span
+              >
+              <ul
+                class="mt-3 mb-4 list-disc list-inside text-gray-500 dark:text-gray-400"
+              >
+                <li>Calauit Safari Park</li>
+                <li>Busuanga Town</li>
+                <li>Black Island White Sand Beach</li>
+                <li>Black Island Cave</li>
+              </ul>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+    <section id="products" class="bg-gray-800 p-4">
+      <div class="py-8 px-4 mx-auto max-w-screen-xl lg:py-16 lg:px-6">
+        <div class="mx-auto max-w-screen-xl text-center mb-8 lg:mb-16">
+          <h2
+            class="mb-4 text-4xl tracking-tight font-extrabold text-white dark:text-white"
+          >
+            Explore Unique Products and Souvenirs with JM R &amp; B
+          </h2>
+          <p
+            class="font-light text-gray-500 sm:text-xl dark:text-gray-400 lg:mb-16"
+          >
+            Delve into a curated collection of distinctive products and
+            keepsakes from Palawan with JM R &amp; B. Our selection celebrates
+            the essence of our local heritage, offering you a piece of paradise
+            to take home. From artisanal crafts to exotic flavors, each item in
+            our collection is a bridge to the vibrant culture and traditions of
+            our community. Connect with the spirit of Palawan through our
+            handpicked souvenirs and make your memories last a lifetime.
+          </p>
+        </div>
+
+        <div class="grid grid-cols-2 md:grid-cols-3 gap-4">
+          <div
+            class="hover:scale-105 transition-transform duration-300 hover:shadow-lg"
+          >
+            <img
+              class="w-full h-48 object-cover rounded-lg"
+              src="assets/pics/p1.jpeg"
+              alt=""
+            />
+          </div>
+          <div
+            class="hover:scale-105 transition-transform duration-300 hover:shadow-lg"
+          >
+            <img
+              class="w-full h-48 object-cover rounded-lg"
+              src="assets/pics/p2.jpeg"
+              alt=""
+            />
+          </div>
+          <div
+            class="hover:scale-105 transition-transform duration-300 hover:shadow-lg"
+          >
+            <img
+              class="w-full h-48 object-cover rounded-lg"
+              src="assets/pics/p3.jpeg"
+              alt=""
+            />
+          </div>
+          <div
+            class="hover:scale-105 transition-transform duration-300 hover:shadow-lg"
+          >
+            <img
+              class="w-full h-48 object-cover rounded-lg"
+              src="assets/pics/p4.jpeg"
+              alt=""
+            />
+          </div>
+          <div
+            class="hover:scale-105 transition-transform duration-300 hover:shadow-lg"
+          >
+            <img
+              class="w-full h-48 object-cover rounded-lg"
+              src="assets/pics/p5.jpeg"
+              alt=""
+            />
+          </div>
+          <div
+            class="hover:scale-105 transition-transform duration-300 hover:shadow-lg"
+          >
+            <img
+              class="w-full h-48 object-cover rounded-lg"
+              src="assets/pics/p6.jpeg"
+              alt=""
+            />
+          </div>
+        </div>
+      </div>
+    </section>
+    <section id="products2" class="mt-4 p-4">
+      <div class="py-8 pt-0 px-4 mx-auto max-w-screen-xl lg:py-16 lg:px-6">
+        <div class="mx-auto max-w-screen-xl text-center mb-8 lg:mb-16">
+          <h2
+            class="mb-4 text-4xl tracking-tight font-extrabold text-gray-900 dark:text-white"
+          >
+            Visit Us Today!
+          </h2>
+          <p
+            class="font-light text-gray-500 sm:text-xl dark:text-gray-400 lg:mb-16"
+          >
+            Join us for an unforgettable experience as you explore the wonders
+            of Palawan. Immerse yourself in a world of unique products and
+            souvenirs that capture the essence of the island's vibrant culture.
+            Don't miss out on the opportunity to create lasting memories and be
+            part of our visitor's gallery showcasing the joyous moments of our
+            guests.
+          </p>
+          <div
+            id="animation-carousel"
+            class="relative w-full pt-0 mt-0 max-w-screen-md mx-auto"
+            data-carousel="slide"
+          >
+            <!-- Carousel wrapper -->
+            <div class="relative h-56 overflow-hidden rounded-lg md:h-96">
+              <!-- Item 1 -->
+              <div class="hidden duration-700 ease-in-out" data-carousel-item>
+                <img
+                  src="assets/pics/s1.jpeg"
+                  class="absolute block w-full -translate-x-1/2 -translate-y-1/2 top-1/2 left-1/2"
+                  alt="..."
+                />
+              </div>
+              <!-- Item 2 -->
+              <div class="hidden duration-700 ease-in-out" data-carousel-item>
+                <img
+                  src="assets/pics/s2.jpeg"
+                  class="absolute block w-full -translate-x-1/2 -translate-y-1/2 top-1/2 left-1/2"
+                  alt="..."
+                />
+              </div>
+              <!-- Item 3 -->
+              <div
+                class="hidden duration-700 ease-in-out"
+                data-carousel-item="active"
+              >
+                <img
+                  src="assets/pics/s3.jpeg"
+                  class="absolute block w-full -translate-x-1/2 -translate-y-1/2 top-1/2 left-1/2"
+                  alt="..."
+                />
+              </div>
+              <!-- Item 4 -->
+              <div class="hidden duration-700 ease-in-out" data-carousel-item>
+                <img
+                  src="assets/pics/s4.jpeg"
+                  class="absolute block w-full -translate-x-1/2 -translate-y-1/2 top-1/2 left-1/2"
+                  alt="..."
+                />
+              </div>
+            </div>
+            <!-- Slider controls -->
+            <button
+              type="button"
+              class="absolute top-0 start-0 z-30 flex items-center justify-center h-full px-4 cursor-pointer group focus:outline-none"
+              data-carousel-prev
+            >
+              <span
+                class="inline-flex items-center justify-center w-10 h-10 rounded-full bg-white/30 dark:bg-gray-800/30 group-hover:bg-white/50 dark:group-hover:bg-gray-800/60 group-focus:ring-4 group-focus:ring-white dark:group-focus:ring-gray-800/70 group-focus:outline-none"
+              >
+                <svg
+                  class="w-4 h-4 text-white dark:text-gray-800 rtl:rotate-180"
+                  aria-hidden="true"
+                  xmlns="http://www.w3.org/2000/svg"
+                  fill="none"
+                  viewBox="0 0 6 10"
+                >
+                  <path
+                    stroke="currentColor"
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                    stroke-width="2"
+                    d="M5 1 1 5l4 4"
+                  />
+                </svg>
+                <span class="sr-only">Previous</span>
+              </span>
+            </button>
+            <button
+              type="button"
+              class="absolute top-0 end-0 z-30 flex items-center justify-center h-full px-4 cursor-pointer group focus:outline-none"
+              data-carousel-next
+            >
+              <span
+                class="inline-flex items-center justify-center w-10 h-10 rounded-full bg-white/30 dark:bg-gray-800/30 group-hover:bg-white/50 dark:group-hover:bg-gray-800/60 group-focus:ring-4 group-focus:ring-white dark:group-focus:ring-gray-800/70 group-focus:outline-none"
+              >
+                <svg
+                  class="w-4 h-4 text-white dark:text-gray-800 rtl:rotate-180"
+                  aria-hidden="true"
+                  xmlns="http://www.w3.org/2000/svg"
+                  fill="none"
+                  viewBox="0 0 6 10"
+                >
+                  <path
+                    stroke="currentColor"
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                    stroke-width="2"
+                    d="m1 9 4-4-4-4"
+                  />
+                </svg>
+                <span class="sr-only">Next</span>
+              </span>
+            </button>
+          </div>
+
+          <div class="mt-8">
+            <p class="font-light text-gray-500 sm:text-xl dark:text-gray-400">
+              Here, we showcase moments of adventure and joy experienced by
+              travelers like you. Get inspired by their stories and pictures,
+              and imagine the memories you could create with us.
+            </p>
+          </div>
+        </div>
+      </div>
+    </section>
+    <br />
+    <footer id="contacts" class="p-4 bg-gray-800 sm:p-6 dark:bg-gray-50">
+      <div class="mx-auto max-w-screen-xl">
+        <div class="md:flex md:justify-between">
+          <div class="mb-6 md:mb-0">
+            <a href="#" class="flex items-center">
+              <img
+                src="assets/logo/1.jpg"
+                class="mr-3 h-8"
+                alt="FlowBite Logo"
+              />
+              <span
+                class="self-center text-2xl text-white font-semibold whitespace-nowrap dark:text-white"
+                >Baybayin Tours</span
+              >
+            </a>
+          </div>
+          <div class="grid grid-cols-2 gap-8 sm:gap-6 sm:grid-cols-3">
+            <div>
+              <h2
+                class="mb-6 text-sm font-semibold text-white uppercase dark:text-gray-900"
+              >
+                Contacts
+              </h2>
+              <ul class="text-white dark:text-gray-400">
+                <!-- Phone Numbers -->
+                <li class="flex items-center mb-4">
+                  <svg
+                    xmlns="http://www.w3.org/2000/svg"
+                    class="h-5 w-5 mr-2 text-white dark:text-gray-400"
+                    fill="none"
+                    viewBox="0 0 24 24"
+                    stroke="currentColor"
+                  >
+                    <path
+                      stroke-linecap="round"
+                      stroke-linejoin="round"
+                      stroke-width="2"
+                      d="M3 5v14h18V5H3zm4 9H5v2h2v-2zm4 0H9v2h2v-2zm4 0h-2v2h2v-2z"
+                    />
+                  </svg>
+                  <a href="tel:+639171551914" class="hover:underline"
+                    >0917-155-1914</a
+                  >
+                </li>
+                <li class="flex items-center mb-4">
+                  <svg
+                    xmlns="http://www.w3.org/2000/svg"
+                    class="h-5 w-5 mr-2 text-white dark:text-gray-400"
+                    fill="none"
+                    viewBox="0 0 24 24"
+                    stroke="currentColor"
+                  >
+                    <path
+                      stroke-linecap="round"
+                      stroke-linejoin="round"
+                      stroke-width="2"
+                      d="M3 5v14h18V5H3zm4 9H5v2h2v-2zm4 0H9v2h2v-2zm4 0h-2v2h2v-2z"
+                    />
+                  </svg>
+                  <a href="tel:+639198840765" class="hover:underline"
+                    >0919-884-0765</a
+                  >
+                </li>
+
+                <!-- Email Addresses -->
+                <li class="flex items-center mb-4">
+                  <svg
+                    xmlns="http://www.w3.org/2000/svg"
+                    class="h-5 w-5 mr-2 text-white dark:text-gray-400"
+                    fill="none"
+                    viewBox="0 0 24 24"
+                    stroke="currentColor"
+                  >
+                    <path
+                      stroke-linecap="round"
+                      stroke-linejoin="round"
+                      stroke-width="2"
+                      d="M16 2a2 2 0 00-2-2H6a2 2 0 00-2 2v20a2 2 0 002 2h8a2 2 0 002-2V2z"
+                    />
+                    <path
+                      stroke-linecap="round"
+                      stroke-linejoin="round"
+                      stroke-width="2"
+                      d="M8 4h8m-8 4h8m-8 4h8"
+                    />
+                  </svg>
+                  <a href="mailto:guedondave@gmail.com" class="hover:underline"
+                    >guedondave@gmail.com</a
+                  >
+                </li>
+                <li class="flex items-center mb-4">
+                  <svg
+                    xmlns="http://www.w3.org/2000/svg"
+                    class="h-5 w-5 mr-2 text-white dark:text-gray-400"
+                    fill="none"
+                    viewBox="0 0 24 24"
+                    stroke="currentColor"
+                  >
+                    <path
+                      stroke-linecap="round"
+                      stroke-linejoin="round"
+                      stroke-width="2"
+                      d="M16 2a2 2 0 00-2-2H6a2 2 0 00-2 2v20a2 2 0 002 2h8a2 2 0 002-2V2z"
+                    />
+                    <path
+                      stroke-linecap="round"
+                      stroke-linejoin="round"
+                      stroke-width="2"
+                      d="M8 4h8m-8 4h8m-8 4h8"
+                    />
+                  </svg>
+                  <a
+                    href="mailto:arpbcoronisland@gmail.com"
+                    class="hover:underline"
+                    >arpbcoronisland@gmail.com</a
+                  >
+                </li>
+                <li class="flex items-center">
+                  <svg
+                    xmlns="http://www.w3.org/2000/svg"
+                    class="h-5 w-5 mr-2 text-white dark:text-gray-400"
+                    fill="none"
+                    viewBox="0 0 24 24"
+                    stroke="currentColor"
+                  >
+                    <path
+                      stroke-linecap="round"
+                      stroke-linejoin="round"
+                      stroke-width="2"
+                      d="M16 2a2 2 0 00-2-2H6a2 2 0 00-2 2v20a2 2 0 002 2h8a2 2 0 002-2V2z"
+                    />
+                    <path
+                      stroke-linecap="round"
+                      stroke-linejoin="round"
+                      stroke-width="2"
+                      d="M8 4h8m-8 4h8m-8 4h8"
+                    />
+                  </svg>
+                  <a
+                    href="mailto:traveltoursbaybayin@gmail.com"
+                    class="hover:underline"
+                    >traveltoursbaybayin@gmail.com</a
+                  >
+                </li>
+              </ul>
+            </div>
+            <div>
+              <h2
+                class="mb-6 text-sm font-semibold text-white uppercase dark:text-gray-900"
+              >
+                Follow us
+              </h2>
+              <ul class="text-white dark:text-gray-400">
+                <li class="mb-4">
+                  <a
+                    href="https://web.facebook.com/baybayintours"
+                    target="_blank"
+                    class="hover:underline"
+                    >Facebook</a
+                  >
+                </li>
+              </ul>
+            </div>
+            <div>
+              <h2
+                class="mb-6 text-sm font-semibold text-white uppercase dark:text-gray-900"
+              >
+                Legal
+              </h2>
+              <ul class="text-white dark:text-gray-400">
+                <li class="mb-4">
+                  <a href="#" class="hover:underline">Privacy Policy</a>
+                </li>
+                <li>
+                  <a href="#" class="hover:underline">Terms &amp; Conditions</a>
+                </li>
+              </ul>
+            </div>
+          </div>
+        </div>
+        <hr
+          class="my-6 border-gray-200 sm:mx-auto dark:border-gray-700 lg:my-8"
+        />
+        <div class="sm:flex sm:items-center sm:justify-between">
+          <span class="text-sm text-white sm:text-center dark:text-gray-400">
+            © 2022
+            <a href="https://flowbite.com" class="hover:underline">LM</a>. All
+            Rights Reserved.
+          </span>
+        </div>
+      </div>
+    </footer>
+
+    <script src="https://unpkg.com/taos@1.0.5/dist/taos.js"></script>
+  </body>
+</html>
