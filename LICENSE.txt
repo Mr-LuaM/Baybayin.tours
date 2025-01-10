@@ -1,0 +1,11 @@
+
+Copyright (c) 2025 Baybayin Tours
+
+This software is licensed exclusively for use by **Baybayin Tours**. It is strictly prohibited to copy, modify, distribute, or use this software for any purpose outside of Baybayin Tours without explicit written permission from the copyright owner.
+
+### Allowed Use for Third Parties:
+- **Preview Only**: Third parties may preview this software solely for demonstration or evaluation purposes. 
+- **No Redistribution or Modification**: Redistribution, reverse-engineering, or modification of the software is strictly prohibited.
+
+### Disclaimer:
+This software is provided "as is," without warranty of any kind, express or implied, including but not limited to the warranties of merchantability, fitness for a particular purpose, or non-infringement. In no event shall the copyright holders be liable for any claim, damages, or other liability, whether in an action of contract, tort, or otherwise, arising from, out of, or in connection with the software or the use or other dealings in the software.
